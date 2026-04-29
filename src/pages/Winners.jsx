@@ -85,7 +85,7 @@ export default function Winners() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("http://localhost:5000/api/winners/my", {
+      const res = await fetch("https://golfbackend-lb1p.onrender.com/api/winners/my", {
         headers: { Authorization: `Bearer ${getToken()}` }
       });
       const data = await res.json();

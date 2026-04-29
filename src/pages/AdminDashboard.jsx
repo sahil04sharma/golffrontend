@@ -13,9 +13,9 @@ export default function AdminDashboard() {
     const token = getToken();
     try {
       const [resUsers, resWinners, resDonations] = await Promise.all([
-        fetch("http://localhost:5000/api/admin/users", { headers: { Authorization: `Bearer ${token}` } }),
-        fetch("http://localhost:5000/api/admin/winners", { headers: { Authorization: `Bearer ${token}` } }),
-        fetch("http://localhost:5000/api/admin/donations", { headers: { Authorization: `Bearer ${token}` } }),
+        fetch("https://golfbackend-lb1p.onrender.com/api/admin/users", { headers: { Authorization: `Bearer ${token}` } }),
+        fetch("https://golfbackend-lb1p.onrender.com/api/admin/winners", { headers: { Authorization: `Bearer ${token}` } }),
+        fetch("https://golfbackend-lb1p.onrender.com/api/admin/donations", { headers: { Authorization: `Bearer ${token}` } }),
       ]);
       const usersData = await resUsers.json();
       const winnersData = await resWinners.json();
@@ -37,7 +37,7 @@ export default function AdminDashboard() {
     setDrawRunning(true);
     const token = getToken();
     try {
-      const res = await fetch("http://localhost:5000/api/admin/draw", {
+      const res = await fetch("https://golfbackend-lb1p.onrender.com/api/admin/draw", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });

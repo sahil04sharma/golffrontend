@@ -103,7 +103,7 @@ export default function Dashboard() {
   useEffect(() => {
     (async () => {
       const token = getToken();
-      const res = await fetch("http://localhost:5000/api/user/dashboard", {
+      const res = await fetch("https://golfbackend-lb1p.onrender.com/api/user/dashboard", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();

@@ -93,7 +93,7 @@ export default function Score() {
       return showToast("Score must be between 1 and 45", true);
     }
     setLoading(true);
-    const res = await fetch("http://localhost:5000/api/scores/add", {
+    const res = await fetch("https://golfbackend-lb1p.onrender.com/api/scores/add", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${getToken()}` },
       body: JSON.stringify({ score: Number(form.score), date: form.date })

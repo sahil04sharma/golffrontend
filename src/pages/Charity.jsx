@@ -107,7 +107,7 @@ export default function Charity() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/charities", { cache: "no-store" });
+        const res = await fetch("https://golfbackend-lb1p.onrender.com/api/charities", { cache: "no-store" });
         const data = await res.json();
         if (Array.isArray(data)) setCharities(data);
         else if (Array.isArray(data.data)) setCharities(data.data);
@@ -125,7 +125,7 @@ export default function Charity() {
     if (!token) return showToast("Login required", true);
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/charities/select", {
+      const res = await fetch("https://golfbackend-lb1p.onrender.com/api/charities/select", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ charity_id: selected, percentage: Number(percentage) })

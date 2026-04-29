@@ -101,7 +101,7 @@ export default function Subscription() {
       const amount = plan === "monthly" ? 100 : 1000;
 
       // 1️⃣ Create Razorpay order
-      const res = await fetch("http://localhost:5000/api/payment/create-order", {
+      const res = await fetch("https://golfbackend-lb1p.onrender.com/api/payment/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -132,7 +132,7 @@ export default function Subscription() {
 
           // 3️⃣ Verify payment
           const verifyRes = await fetch(
-            "http://localhost:5000/api/payment/verify",
+            "https://golfbackend-lb1p.onrender.com/api/payment/verify",
             {
               method: "POST",
               headers: {
